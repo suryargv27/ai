@@ -71,7 +71,7 @@ def ab_prune(state, player):
 def max_value(state, player, alpha, beta):
     win_status = check_position(state, player)
     moves = actions(state)
-    no_of_moves=len(moves)
+    no_of_moves = len(moves)
 
     if win_status == 1 or win_status == -1 or moves == []:
         return win_status*no_of_moves, None
@@ -90,7 +90,7 @@ def max_value(state, player, alpha, beta):
 def min_value(state, player, alpha, beta):
     win_status = check_position(state, player)
     moves = actions(state)
-    no_of_moves=len(moves)
+    no_of_moves = len(moves)
 
     if win_status == 1 or win_status == -1 or moves == []:
         return win_status*no_of_moves, None
@@ -178,7 +178,7 @@ def play_with_computer():
 
 
 def eval_position():
-    
+
     print("Enter position\nx - Player\no - Opponent\n0 - Null")
     for i in range(n):
         for j in range(n):
@@ -188,8 +188,8 @@ def eval_position():
 
     value, move = ab_prune(board, symbols[player])
     print_board(board)
-    print("Position status :", value)
-    print("Best move       :", move)
+    print("Position heuristic :", value)
+    print("Best move          :", move)
 
 
 n = 3
